@@ -1,0 +1,20 @@
+{
+	"node": "n8n-nodes-base.SendZen",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": [
+		"Miscellaneous"
+	],
+	"resources": {
+		"credentialDocumentation": [
+			{
+				"url": "https://sendzen.io/docs"
+			}
+		],
+		"primaryDocumentation": [
+			{
+				"url": "https://sendzen.io/docs"
+			}
+		]
+	}
+}

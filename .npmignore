@@ -1,0 +1,40 @@
+# Development files
+.DS_Store
+*.tsbuildinfo
+.git
+.github
+.vscode
+.editorconfig
+.eslintrc.js
+.eslintrc.prepublish.js
+.prettierrc.js
+tsconfig.json
+gulpfile.js
+nodes/
+credentials/
+
+# Build artifacts
+nodemon.json
+node_modules
+*.log
+
+# Documentation and examples
+README_TEMPLATE.md
+CODE_OF_CONDUCT.md
+
+# Tests
+*.spec.ts
+*.test.ts
+__tests__
+coverage
+src/**/*.spec.ts
+
+# Ignore build archives
+*.tgz
+
+# Ignore config files not needed in production
+jest.config.js
+tests/
+shared/
+dist/tests/
+assets/

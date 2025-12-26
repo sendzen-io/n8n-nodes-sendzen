@@ -1,0 +1,1 @@
+export const BASE_DOMAIN = 'https://api.sendzen.io';
