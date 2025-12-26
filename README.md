@@ -4,15 +4,18 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 [![n8n](https://img.shields.io/badge/n8n-community-orange?style=flat-square)](https://n8n.io)
 
-This is an n8n community node. It lets you use [SendZen](https://www.sendzen.io/) in your n8n workflows.
+This is an **n8n community node** that lets you use [**SendZen**](https://www.sendzen.io/) inside your n8n workflows.
 
-**SendZen** is a powerful platform for automating SMS and WhatsApp messages. This node package allows you to integrate SendZen's WhatsApp Cloud API capabilities directly into your n8n automation workflows.
+SendZen provides an API on top of the **official WhatsApp Cloud API**, so you can send messages, use templates, and receive inbound WhatsApp messages via webhooks.
+
+- Website: https://www.sendzen.io
+- Docs: https://sendzen.io/docs
 
 This node is **fully typed** and includes **comprehensive unit tests**, ensuring reliability for production workflows.
 
 ---
 
-![SendZen Node in n8n](./assets/screenshot.png)
+![SendZen Node in n8n](https://raw.githubusercontent.com/sendzen-io/n8n-nodes-sendzen/master/assets/Screenshot.png)
 
 ---
 
@@ -64,6 +67,8 @@ To use the SendZen nodes, you need to authenticate with your SendZen API key.
 2.  **Get Your API Key**: Navigate to your Dashboard > API Keys.
 3.  **WABA Setup**: Ensure your WhatsApp Business Account is connected in SendZen.
 
+Tip: Keep credentials stored only in n8n Credentials and treat the API key as a secret.
+
 ### Setting Up in n8n
 
 1.  In the SendZen node, select **Credentials** > **Create New**.
@@ -80,27 +85,34 @@ To use the SendZen nodes, you need to authenticate with your SendZen API key.
 
 ---
 
-## Usage Examples
+## Quick start
 
-### 🚀 Basic: Send a Session Message
-1.  Add a **SendZen** node.
-2.  Operation: `Send Session Message`.
-3.  WABA Account: Select from the dropdown.
-4.  Recipient: `+1234567890`.
-5.  Message: "Hello from n8n!".
+### 1) Send a session message
+1. Add **SendZen** node
+2. Operation: **Send Session Message**
+3. Select your WABA account
+4. Set **Recipient** (E.164 format, example: `+14155552671`)
+5. Set **Message**
 
-### 🧩 Advanced: Dynamic Templates
-1.  Add a **SendZen** node.
-2.  Operation: `Send Template Message`.
-3.  Template: Select a template (e.g., `shipping_update`).
-4.  **Template Variables**: The node will automatically show fields like:
-    *   `Body Variable {{1}}` -> Map to `{{ $json.order_id }}`
-    *   `Header Image URL` -> Map to `{{ $json.image_link }}`
+### 2) Send a template message
+1. Add **SendZen** node
+2. Operation: **Send Template Message**
+3. Pick a template
+4. Map template variables from previous nodes (for example: `{{ $json.orderId }}`)
 
-### 📥 Handling Incoming Messages
-1.  Add the **SendZen Trigger** node.
-2.  Connect it to a **Switch** node to check message type (text, image, button reply).
-3.  Connect to a **SendZen** node (Operation: `Mark as Read`) to acknowledge receipt.
+### 3) Receive inbound messages (webhook)
+1. Add **SendZen Trigger** node
+2. Copy the webhook URL shown in the node
+3. Paste it into your SendZen webhook settings
+4. Connect the trigger to the rest of your workflow (Switch, IF, Set, SendZen actions, etc.)
+
+---
+
+## Troubleshooting
+
+- **401 or auth errors**: re-check the API key and the selected credential in the node
+- **No WABA accounts listed**: make sure your WABA is connected in SendZen
+- **Trigger not firing**: confirm the webhook URL is saved in SendZen and reachable from the internet
 
 ---
 
@@ -147,7 +159,10 @@ We welcome contributions! Please follow these steps:
 3.  **Run Tests:** Ensure `pnpm test` passes.
 4.  Submit a Pull Request.
 
-**Support:** Contact [milan@sendzen.io](mailto:milan@sendzen.io) or open a GitHub Issue.
+## Support
+
+- Email: [milan@sendzen.io](mailto:milan@sendzen.io)
+- Issues: use GitHub Issues in this repository
 
 ---
 
