@@ -1,0 +1,8 @@
+assets/
+node_modules/
+.vscode/
+.DS_Store
+.prettierrc.js
+.eslintrc.js
+.eslintignore
+.eslintrc.js
