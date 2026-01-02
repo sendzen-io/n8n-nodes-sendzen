@@ -1,6 +1,6 @@
 {
 	"name": "n8n-nodes-sendzen",
-	"version": "1.0.6",
+	"version": "1.0.7",
 	"description": "Send and receive WhatsApp Cloud API messages in n8n using SendZen (actions + webhook trigger).",
 	"license": "MIT",
 	"keywords": [
