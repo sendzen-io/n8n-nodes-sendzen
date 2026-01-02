@@ -51,11 +51,11 @@ With this n8n node, you can:
 
 ### Send Session Message
 
-![SendZen Send Session Message Node in n8n](https://raw.githubusercontent.com/sendzen-io/n8n-nodes-sendzen/master/assets/Session_Message.png)
+![SendZen Send Session Message Node in n8n](https://raw.githubusercontent.com/sendzen-io/n8n-nodes-sendzen/main/assets/Session_Message.png)
 
 ### Send Template Message
 
-![SendZen Send Template Message Node in n8n](https://raw.githubusercontent.com/sendzen-io/n8n-nodes-sendzen/master/assets/Template_Message.png)
+![SendZen Send Template Message Node in n8n](https://raw.githubusercontent.com/sendzen-io/n8n-nodes-sendzen/main/assets/Template_Message.png)
 
 ---
 
